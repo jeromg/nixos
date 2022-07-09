@@ -28,6 +28,7 @@ $ sudo su
 - You now have a functional VM (XFCE)
 - Once logged in
 ```
+$ passwd (change default password)
 $ mkdir ~/.setup
 $ sudo mv /etc/nixos/* ~/.setup/
 $ cd ~/.setup
