@@ -37,6 +37,9 @@ $ nix flake update
 $ sudo nixos-rebuild switch --flake .#[profile]
 
 ```
+## Credits
+- [Matthias Benaets](https://github.com/MatthiasBenaets/nixos-config) and his incredible [tutorial video](https://www.youtube.com/watch?v=AGVXJ-TIv3Y)
+- [Tristan Maat](https://github.com/TLATER/dotfiles)
 
 ## Todo
 - Error catching and friendly error messages in auto-install.sh
