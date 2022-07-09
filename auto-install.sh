@@ -49,7 +49,6 @@ git clone https://github.com/jeromg/nixos /mnt/etc/nixos
 
 cd /mnt/etc/nixos
 
-nix flake update
-
 nixos-install --flake .#telperion
 
+nix flake update
