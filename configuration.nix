@@ -117,7 +117,7 @@
 
   nix = {
     package=pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
+    extraOptions = "extra-experimental-features = nix-command flakes";
   };
 
   # Open ports in the firewall.

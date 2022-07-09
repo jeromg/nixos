@@ -50,5 +50,5 @@ git clone https://github.com/jeromg/nixos /mnt/etc/nixos
 
 cd /mnt/etc/nixos
 
-nixos-install --no-root-passwd --flake .#telperion
+nixos-install --flake .#telperion
 
