@@ -19,5 +19,15 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   
-  home.packages = with pkgs; [ git gh fortune ];
+  home.packages = with pkgs; [ 
+    git
+    gh 
+    brave
+    firefox
+    thunderbird
+    htop
+    btop
+    glances
+    killall
+    ];
 }
