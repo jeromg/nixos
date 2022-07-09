@@ -1,7 +1,6 @@
-# nixos
-NixOS installation and configuration
+# NixOS installation scripts (work in progress)
 
-This is my own attempt at building NixOS from scratch
+This is my own attempt at building NixOS from scratch. This provides the bare minimum at the moment, I'll be working on it before I can install NixOS as (hopefully) my daily driver.
 
 This repo includes:
   - a partitioning script using ZFS with native encryption
