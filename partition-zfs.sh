@@ -44,6 +44,7 @@ zfs create -p -o mountpoint=legacy rpool/safe/persist
 mkdir /mnt/persist
 mount -t zfs rpool/safe/persist /mnt/persist
 
+nix-env -iA nixos.git
 git clone https://github.com/jeromg/nixos /mnt/etc/nixos
 
 cd /mnt/etc/nixos
