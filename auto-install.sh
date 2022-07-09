@@ -22,7 +22,7 @@ mkswap -L swap "${disk}2"
 swapon /dev/sda2
 
 # Format boot partition and force UUID to avoid modification of hardware config
-mkfs.fat -F 32 -n EFI -i e02c7a1a "${disk}3"
+mkfs.fat -F 32 -n EFI "${disk}3"
 
 # Create encrypted main ZFS pool
 zpool create \
