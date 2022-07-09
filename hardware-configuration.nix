@@ -8,6 +8,12 @@
 
   boot.initrd.availableKernelModules = [ "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
+
+# Reset root at each boot!
+  boot.initrd.postDeviceCommands = lib.mkAfter ''
+    zfs rollback -r rpool/local/root@blank
+  '';
+
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
