@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 disk=/dev/sda
 
 parted "$disk" -- mklabel gpt
@@ -44,4 +43,6 @@ mount -t zfs rpool/safe/home /mnt/home
 zfs create -p -o mountpoint=legacy rpool/safe/persist
 mkdir /mnt/persist
 mount -t zfs rpool/safe/persist /mnt/persist
-nixos-generate-config --root /mnt
+
+nixos-install --no-root-passwd --flake .#telperion
+
