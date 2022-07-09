@@ -9,7 +9,7 @@ parted "$disk" -- mkpart ESP fat32 1MiB 512MiB
 parted "$disk" -- set 3 esp on
 mkswap -L swap "${disk}2"
 swapon /dev/sda2
-mkfs.fat -F 32 -n EFI "${disk}3"
+mkfs.fat -F 32 -n EFI -i e02c7a1a "${disk}3"
 
 zpool create \
   -o ashift=12 \
@@ -43,6 +43,10 @@ mount -t zfs rpool/safe/home /mnt/home
 zfs create -p -o mountpoint=legacy rpool/safe/persist
 mkdir /mnt/persist
 mount -t zfs rpool/safe/persist /mnt/persist
+
+git clone https://github.com/jeromg/nixos /mnt/etc/nixos
+
+cd /mnt/etc/nixos
 
 nixos-install --no-root-passwd --flake .#telperion
 
