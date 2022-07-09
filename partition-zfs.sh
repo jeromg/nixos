@@ -45,6 +45,7 @@ mkdir /mnt/persist
 mount -t zfs rpool/safe/persist /mnt/persist
 
 nix-env -iA nixos.git
+nix flake update
 git clone https://github.com/jeromg/nixos /mnt/etc/nixos
 
 cd /mnt/etc/nixos
