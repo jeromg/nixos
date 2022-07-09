@@ -5,6 +5,7 @@ This is my own attempt at building NixOS from scratch. This provides the bare mi
 This repo includes:
   - a partitioning script using ZFS with native encryption
   - a NixOS confiration (flake-based) for a HyperV guest VM using home-manager
+  - it provides an almost stateless installation as per the excellent article by Graham Christensen [Erase your darlings](https://grahamc.com/blog/erase-your-darlings)
 
 ## Objective
 - Setup a brand new NixOS VM under HyperV in a (semi-)automated way
