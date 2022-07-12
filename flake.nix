@@ -9,30 +9,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: 
+  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      lib = nixpkgs.lib;
-    in {
-      nixosConfigurations = {
-        telperion = lib.nixosSystem {
-          inherit system;
-          modules = [ 
-            ./configuration.nix 
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.jerome = {
-                imports = [ ./home.nix ];
-            };
-          }
-            
-          ];
-        };
-      };
+      user = "jerome";
+      location = "$HOME/.setup";
+    in 
+    {
+      nixosConfigurations = (
+        import ./hosts {
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager user location;
+        }
+      );
     };
 }

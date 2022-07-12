@@ -9,7 +9,7 @@
   boot.initrd.availableKernelModules = [ "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
 
-# Reset root at each boot!
+  # Reset the root directory!
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     zfs rollback -r rpool/local/root@blank
   '';
@@ -24,6 +24,7 @@
 
   fileSystems."/boot" =
     { 
+      # device = "/dev/disk/by-uuid/E02C-7A1A";
       device = "/dev/disk/by-label/EFI";
       fsType = "vfat";
     };
