@@ -108,7 +108,7 @@
   services.openssh = {
     enable = true;
     permitRootLogin = "no";
-    passwordAuthentication = "yes";
+    passwordAuthentication = false;
   };
 
   system.autoUpgrade = {
