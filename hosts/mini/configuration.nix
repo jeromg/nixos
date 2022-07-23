@@ -66,7 +66,7 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-  hardware.systemd.tmpfiles.rules = [
+  systemd.tmpfiles.rules = [
     "L /var/lib/bluetooth - - - - /rpool/persist/var/lib/bluetooth"
   ];
 
