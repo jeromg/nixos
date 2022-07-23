@@ -4,7 +4,6 @@
 
 { lib, pkgs, user, ... }:
 
-{
   let 
     impermanence = builtins.fetchTarBall "https://github.com/nix-community/impermanence/archive/master.tar.gz";
   in
@@ -20,6 +19,7 @@
       };
     }
 
+{
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
