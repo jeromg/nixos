@@ -8,8 +8,6 @@
       url = "https://github.com/nix-community/impermanence/archive/master.tar.gz";
       sha256 = "0000000000000000000000000000000000000000000000000000";
       };
-    impermanence = builtins.fetchTarball 
-
   in
 
 {
