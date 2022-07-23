@@ -109,7 +109,7 @@
     enable = true;
     permitRootLogin = "no";
     passwordAuthentication = "yes";
-  }
+  };
 
   system.autoUpgrade = {
     enable = true;
