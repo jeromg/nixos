@@ -1,5 +1,20 @@
 { lib, inputs, nixpkgs, home-manager, user, location, ...}:
 
+  let 
+    impermanence = builtins.fetchTarBall "https://github.com/nix-community/impermanence/archive/master.tar.gz";
+  in
+  {
+    imports = [ "${impermanence}/nixos.nix" ];
+    envrionment.persistence."/persist" = {
+        directories = [
+          "/var/lib/bluetooth"
+          "/etc/NetworkManager"
+          "/var/log"
+          "/var/lib"
+        ];
+      };
+    }
+
 let
   system="x86_64-linux";
   pkgs = import nixpkgs {
@@ -28,20 +43,6 @@ in
     ];
   };
   melian = lib.nixosSystem {
-  let 
-    impermanence = builtins.fetchTarBall "https://github.com/nix-community/impermanence/archive/master.tar.gz";
-  in
-  {
-    imports = [ "${impermanence}/nixos.nix" ];
-    envrionment.persistence."/persist" = {
-        directories = [
-          "/var/lib/bluetooth"
-          "/etc/NetworkManager"
-          "/var/log"
-          "/var/lib"
-        ];
-      };
-    }
     inherit system;
     specialArgs = { inherit pkgs inputs user location; };
     modules = [
