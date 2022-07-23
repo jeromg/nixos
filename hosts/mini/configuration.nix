@@ -6,7 +6,7 @@
   let 
     src = {
       url = "https://github.com/nix-community/impermanence/archive/master.tar.gz";
-      sha256 = "0000000000000000000000000000000000000000000000000000";
+      sha256 = "7mwbqj1h3rym93hy1knxd33dzspmy5i7y1k930vg85yp3a1y8q";
       };
     impermanence = builtins.fetchTarball src;
   in
