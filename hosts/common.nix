@@ -1,5 +1,6 @@
 { config, lib, pkgs, user, ... }:
 
+{
   let 
     impermanence = builtins.fetchTarBall "https://github.com/nix-community/impermanence/archive/master.tar.gz";
   in
@@ -15,7 +16,6 @@
       };
    }
 
-{
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
