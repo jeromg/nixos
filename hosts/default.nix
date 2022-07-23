@@ -27,4 +27,20 @@ in
       }
     ];
   };
+  melian = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit pkgs inputs user location; };
+    modules = [
+      ./mini/configuration.nix
+      ./mini/hardware.nix
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = {inherit user;};
+        home-manager.users.${user} = {
+          imports = [(import ./common.nix)] ++ [(import ./hyperv-vm/home.nix)];
+        };
+      }
+    ];
+  };
 }
