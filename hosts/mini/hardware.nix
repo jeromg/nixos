@@ -13,6 +13,11 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  # Reset the root directory!
+  boot.initrd.postDeviceCommands = lib.mkAfter ''
+    zfs rollback -r rpool/local/root@blank
+  '';
+
   fileSystems."/" =
     { device = "rpool/local/root";
       fsType = "zfs";
