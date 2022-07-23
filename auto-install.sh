@@ -83,6 +83,10 @@ zfs create -p -o mountpoint=legacy rpool/safe/persist
 mkdir /mnt/persist
 mount -t zfs rpool/safe/persist /mnt/persist
 
+# Allow ZFS auto snapshots
+zfs set com.sun:auto-snapshot=true rpool/safe/home
+zfs set com.sun:auto-snapshot=true rpool/safe/persist
+
 # Install git and clone repo
 echo "Install git and clone repo"
 nix-env -iA nixos.git
