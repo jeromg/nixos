@@ -25,7 +25,7 @@
   networking.hostName = "melian"; # Define your hostname.
   networking.hostId = "01020304";
   networking.interfaces.wlp2s0.useDHCP = true;
-  networking.networkManager.enable = true;
+  networking.networkmanager.enable = true;
 
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
