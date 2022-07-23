@@ -17,12 +17,15 @@
       enable = true;
       devices = [ "nodev" ];
       efiSupport = true;
+      useOSProber = true;
     };
     timeout = 15;
   };
 
   networking.hostName = "melian"; # Define your hostname.
   networking.hostId = "01020304";
+  networking.interfaces.wlp2s0.useDHCP = true;
+  networking.networkManager.enable = true;
 
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -68,7 +71,7 @@
    users.users.${user} = {
      isNormalUser = true;
      initialPassword = "test";
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
   #   packages = with pkgs; [
   #     firefox
   #     thunderbird
