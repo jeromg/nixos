@@ -105,7 +105,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh = {
+  services.sshd = {
     enable = true;
     permitRootLogin = "no";
     passwordAuthentication = "yes";
