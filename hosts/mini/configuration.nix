@@ -66,6 +66,9 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  hardware.systemd.tmpfiles.rules = [
+    "L /var/lib/bluetooth - - - - /rpool/persist/var/lib/bluetooth"
+  ];
 
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -84,10 +87,13 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      vim
+      wget
+    ];
+    etc."NetworkManager/system-connections".source = "/rpool/persist/etc/NetworkManager/system-connections";
+  };
 
   services.zfs = {
       autoScrub.enable = true;
