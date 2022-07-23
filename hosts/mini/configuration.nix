@@ -5,6 +5,21 @@
 { lib, pkgs, user, ... }:
 
 {
+  let 
+    impermanence = builtins.fetchTarBall "https://github.com/nix-community/impermanence/archive/master.tar.gz";
+  in
+  {
+    imports = [ "${impermanence}/nixos.nix" ];
+    envrionment.persistence."/persist" = {
+        directories = [
+          "/var/lib/bluetooth"
+          "/etc/NetworkManager"
+          "/var/log"
+          "/var/lib"
+        ];
+      };
+    }
+
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
@@ -66,10 +81,6 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-  systemd.tmpfiles.rules = [
-    "d /var/lib/bluetooth 700 root root - -"
-    "L /var/lib/bluetooth - - - - /persist/var/lib/bluetooth"
-  ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -92,7 +103,6 @@
       vim
       wget
     ];
-    etc."NetworkManager/system-connections".source = "/persist/etc/NetworkManager/system-connections";
   };
 
   services.zfs = {
