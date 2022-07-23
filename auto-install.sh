@@ -3,6 +3,9 @@
 # Define install disk
 disk=/dev/sdb
 
+# Define Machine name (used for Flake)
+flake_machine="melian"
+
 # Create new GPT
 parted "$disk" -- mklabel gpt
 
@@ -88,5 +91,5 @@ git clone https://github.com/jeromg/nixos /mnt/etc/nixos
 # Install OS
 echo "Install OS"
 cd /mnt/etc/nixos
-nixos-install --flake .#telperion
+nixos-install --flake .#{flake_machine}
 
