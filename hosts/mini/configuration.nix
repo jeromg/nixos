@@ -67,9 +67,8 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   systemd.tmpfiles.rules = [
-    "L /var/lib/bluetooth - - - - /rpool/persist/var/lib/bluetooth"
+    "L /var/lib/bluetooth - - - - /persist/var/lib/bluetooth"
   ];
-
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -92,7 +91,7 @@
       vim
       wget
     ];
-    etc."NetworkManager/system-connections".source = "/rpool/persist/etc/NetworkManager/system-connections";
+    etc."NetworkManager/system-connections".source = "/persist/etc/NetworkManager/system-connections";
   };
 
   services.zfs = {
