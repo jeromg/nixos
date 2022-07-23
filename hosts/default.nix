@@ -5,7 +5,7 @@
   in
   {
     imports = [ "${impermanence}/nixos.nix" ];
-    envrionment.persistence."/persist" = {
+    environment.persistence."/persist" = {
         directories = [
           "/var/lib/bluetooth"
           "/etc/NetworkManager"
@@ -13,7 +13,7 @@
           "/var/lib"
         ];
       };
-    }
+
 
 let
   system="x86_64-linux";
@@ -59,3 +59,4 @@ in
     ];
   };
 }
+    }
