@@ -82,6 +82,11 @@
     wget
   ];
 
+  services.zfs = {
+      autoScrub.enable = true;
+      autoSnapshot.enable = true;
+    }
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -93,7 +98,11 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    permitRootLogin = "no";
+    passwordAuthentication = "yes";
+  }
 
   system.autoUpgrade = {
     enable = true;
