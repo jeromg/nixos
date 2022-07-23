@@ -28,6 +28,20 @@ in
     ];
   };
   melian = lib.nixosSystem {
+  let 
+    impermanence = builtins.fetchTarBall "https://github.com/nix-community/impermanence/archive/master.tar.gz";
+  in
+  {
+    imports = [ "${impermanence}/nixos.nix" ];
+    envrionment.persistence."/persist" = {
+        directories = [
+          "/var/lib/bluetooth"
+          "/etc/NetworkManager"
+          "/var/log"
+          "/var/lib"
+        ];
+      };
+    }
     inherit system;
     specialArgs = { inherit pkgs inputs user location; };
     modules = [
@@ -38,7 +52,7 @@ in
         home-manager.useUserPackages = true;
         home-manager.extraSpecialArgs = {inherit user;};
         home-manager.users.${user} = {
-          imports = [(import ./common.nix)] ++ [(import ./hyperv-vm/home.nix)];
+          imports = [(import ./common.nix)] ++ [(import ./mini/home.nix)];
         };
       }
     ];
