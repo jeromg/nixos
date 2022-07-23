@@ -15,12 +15,11 @@
     location = "$HOME/.setup";
   in
   {
-
-      nixosConfigurations = (
-        import ./hosts {
-          inherit (nixpkgs) lib;
-          inherit inputs nixpkgs home-manager user location;
-        }
-      );
-    }
+    nixosConfigurations = (
+      import ./hosts {
+        inherit (nixpkgs) lib;
+        inherit inputs nixpkgs home-manager user location;
+      }
+    );
+  };
 }
