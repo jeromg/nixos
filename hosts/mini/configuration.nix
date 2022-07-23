@@ -64,6 +64,7 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  hardware.bluetoot.enable = true;
   service.blueman.enable = true;
 
 
