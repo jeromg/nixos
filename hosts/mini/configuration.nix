@@ -93,11 +93,8 @@
      isNormalUser = true;
      initialPassword = "test";
      extraGroups = [ "wheel" "networkmanager"];
-     openssh.authorizedKeys.keyFiles = [
-       ~/.ssh/authorized_keys
-     ];
      openssh.authorizedKeys.keys = [
-       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRh/o9OAy/+zFCQN4b/v5zReUdMSS+Fq5PpH/HIXQ9SQZEiJoZZsd3tjrBDtctgjuP/WFHhGK5MwMJddiwhQb8CVpB0uU06OR0Lw94a+eTw7Z7K/csP5G1fOaPggx+2LQ0DFn2kII3Vx0XQ1tMzpGbgdr1D9+uGhOcWctX17ynYJz77bhj8E3R1B1Z4GtQcBMqnmEgcLcUsTHlJaR3/TgmWgFuXBxyV+ZFytTDaUJ2dkAzmyZkFropIuiKEPEdAysJSp40tnc1Kkoz9x9Sv9rfLYQ4GdcFQ/nGLD1Hd8H/1aOryxt3kBmpp2SMkWIsj/3/6VGreWQmc1IQ/GaBAH10aP2K6BsxTSqdpkBuXAeTUAlfcC5ba1eWhiOXMYio0yoG7EBtTG9lIohaSVyajErlmlmJKUOs0hHSfhb9AkTLCqJkro7a/5yYmcSYA55w2SYKr7GsxiU2/SG4HqiTgWm5Eo4lSRHzmRvTwRFjlWdowMNRKsUPQKKARFAwlU7Oiv9M46kP5bbzmNCMqqg+eiVqvLgquKYhRXddhmCUnnP+FmZCdDePH35grsEbUpzt4y+rgghPlfL8IEanbg7Cy2KauNy+Le0eQFjAXx/5cXWeL+Creogfa0plafg+R6yBNToUhzdkszirt8KPjtW4+8PGafgDOejXCs4HBQT9BhDiyQ== nixos-windows"
+       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRh/o9OAy/+zFCQN4b/v5zReUdMSS+Fq5PpH/HIXQ9SQZEiJoZZsd3tjrBDtctgjuP/WFHhGK5MwMJddiwhQb8CVpB0uU06OR0Lw94a+eTw7Z7K/csP5G1fOaPggx+2LQ0DFn2kII3Vx0XQ1tMzpGbgdr1D9+uGhOcWctX17ynYJz77bhj8E3R1B1Z4GtQcBMqnmEgcLcUsTHlJaR3/TgmWgFuXBxyV+ZFytTDaUJ2dkAzmyZkFropIuiKEPEdAysJSp40tnc1Kkoz9x9Sv9rfLYQ4GdcFQ/nGLD1Hd8H/1aOryxt3kBmpp2SMkWIsj/3/6VGreWQmc1IQ/GaBAH10aP2K6BsxTSqdpkBuXAeTUAlfcC5ba1eWhiOXMYio0yoG7EBtTG9lIohaSVyajErlmlmJKUOs0hHSfhb9AkTLCqJkro7a/5yYmcSYA55w2SYKr7GsxiU2/SG4HqiTgWm5Eo4lSRHzmRvTwRFjlWdowMNRKsUPQKKARFAwlU7Oiv9M46kP5bbzmNCMqqg+eiVqvLgquKYhRXddhmCUnnP+FmZCdDePH35grsEbUpzt4y+rgghPlfL8IEanbg7Cy2KauNy+Le0eQFjAXx/5cXWeL+Creogfa0plafg+R6yBNToUhzdkszirt8KPjtW4+8PGafgDOejXCs4HBQT9BhDiyQ== jerome"
      ];
    };
 
