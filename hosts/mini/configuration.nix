@@ -38,10 +38,18 @@
     timeout = 15;
   };
 
-  networking.hostName = "melian"; # Define your hostname.
-  networking.hostId = "01020304";
-  networking.interfaces.wlp2s0.useDHCP = true;
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "melian"; # Define your hostname.
+    hostId = "01020304";
+    interfaces.wlp2s0.useDHCP = false;
+    interfaces.wlp2s0.ipv4.addresses = [ {
+      address = "192.168.8.200";
+      prefixLength = 24;
+    } ];
+    defaultGateway = "192.168.8.1";
+    nameservers = [ "208.67.222.222" "208.67.220.220" ];
+    networkmanager.enable = true;
+  };
 
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
