@@ -48,7 +48,7 @@
     } ];
     defaultGateway = "192.168.8.1";
     nameservers = [ "208.67.222.222" "208.67.220.220" ];
-    networkmanager.enable = true;
+    #networkmanager.enable = true;
   };
 
   # Pick only one of the below networking options.
